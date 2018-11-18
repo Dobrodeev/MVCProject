@@ -11,6 +11,11 @@ class NewsController
     public function actionIndex()
     {
         $newslist = array();
+        $newslist = News::getNewsList();
+        echo 707;
+        echo '<pre>';
+        print_r($newlist);
+        echo '</pre>';
     }
 
     public function actionNew()
