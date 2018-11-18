@@ -66,7 +66,7 @@ class Router
     public function run(){
 
         $uri=$this->getURI();
-        echo $uri;
+        echo $uri;// адресная строка
 
         foreach ($this->routes  as $uriPattern=>$path){
             if(preg_match("~$uriPattern~",$uri)){
