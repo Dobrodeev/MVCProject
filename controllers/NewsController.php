@@ -14,7 +14,7 @@ class NewsController
         $newslist = News::getNewsList();
         echo 707;
         echo '<pre>';
-        print_r($newlist);
+        print_r($newslist);
         echo '</pre>';
     }
 
