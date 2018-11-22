@@ -11,15 +11,16 @@ class News
     {
         $db = DB::getConnect();// подключение к БД
         $newslist = array();
-        $result = $db->query('SELECT id, title, date, author_name, short_content FROM news');
+        $result = $db->query('SELECT id, title, date, author_name, short_content, preview FROM news');
         $i = 0;
         while ($row = $result->fetch())
         {
             $newslist[$i]['id'] = $row['id'];
             $newslist[$i]['title'] = $row['title'];
-            $newslist[$i]['date'] = $row['dte'];
+            $newslist[$i]['date'] = $row['date'];
             $newslist[$i]['author_name'] = $row['author_name'];
             $newslist[$i]['short_content'] = $row['short_content'];
+            $newslist[$i]['preview'] = $row['preview'];
             $i++;
         }
         return $newslist;
