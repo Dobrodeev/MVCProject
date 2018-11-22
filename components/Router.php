@@ -72,11 +72,11 @@ class Router
             if(preg_match("~$uriPattern~",$uri)){
                 $internalRoute=preg_replace("~$uriPattern~",$path,$uri);
                 $segment=explode('/',$internalRoute);
-                echo '<pre>';
-                print_r($segment);
-                echo '</pre>';
+//                echo '<pre>';
+//                print_r($segment);
+//                echo '</pre>';
                 $controllername=array_shift($segment).'Controller';
-                echo $controllername.'<br>';
+//                echo $controllername.'<br>';
                 $controllername=ucfirst($controllername);
                 $actionname='action'.ucfirst(array_shift($segment));
                 echo $actionname;
