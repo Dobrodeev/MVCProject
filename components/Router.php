@@ -79,7 +79,7 @@ class Router
 //                echo $controllername.'<br>';
                 $controllername=ucfirst($controllername);
                 $actionname='action'.ucfirst(array_shift($segment));
-                echo $actionname;
+//                echo $actionname;
                 $parametr = $segment;
                 $controllerfile = ROOT.'/controllers/'.$controllername.'.php'; // адрес на $NewsController
                 if (file_exists($controllerfile)) // существует ли файл
