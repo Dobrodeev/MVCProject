@@ -12,10 +12,11 @@ class NewsController
     {
         $newslist = array();
         $newslist = News::getNewsList();
-        echo 707;
-        echo '<pre>';
-        print_r($newslist);
-        echo '</pre>';
+//        echo 707;
+
+        require_once (ROOT.'/views/news/index.php');
+
+        return true;
     }
 
     public function actionNew()
