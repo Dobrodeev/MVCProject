@@ -1,12 +1,12 @@
 <?php
-/**
+
 foreach ($newslist as $value)
 {
     echo '<pre>';
     echo $value['preview'];
     echo '</pre>';
 }
- */
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -49,12 +49,13 @@ foreach ($newslist as $value)
     <div id="content">
         <?php foreach ($newslist as $newitem):?>
         <div class="post">
-            <h2 class="title"><a href="/news/<?php $newitem['id'];?>"> <?php echo $newitem['title'].'#'.$newitem['id'];?></a></h2>
+<!--            <a href="/news/--><?php //echo $newitem['id'];?><!--">-->
+            <h2 class="title"><a href="/news/<?php echo $newitem['id'];?>"> <?php echo $newitem['title'].'#'.$newitem['id'];?></a></h2>
             <p class="meta">Posted by <a href="#"><?php echo $newitem['author_name'];?></a> on <?php echo $newitem['date'];?>
                 <a href="/news/<?php echo $newitem['id'];?>" class="permalink">Full article</a>
             </p>
             <div class="entry">
-                <p><img src="/template/ <?php echo $newitem['preview'];?>" alt="" width="" height=""></p>
+                <p> <img src="/template/<?php echo $newitem['preview'];?>" width="800 " height="300"></p>
                 <p><?php echo $newitem['short_content'];?></p>
             </div>
         </div>
