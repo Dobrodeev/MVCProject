@@ -28,4 +28,12 @@ class News
 //        print_r($newlist);
 //        echo '</pre>';
     }
+    public static function getNewListByID($id)
+    {
+        $db=DB::getConnect();
+        $result = $db->query('SELECT * FROM news WHERE id='.$id);
+        $result->setFetchMode((PDO::FETCH_ASSOC));
+        $newsitem=$result->fetch();
+        return $newsitem;
+    }
 }
