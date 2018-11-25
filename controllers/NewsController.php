@@ -19,8 +19,15 @@ class NewsController
         return true;
     }
 
-    public function actionNew()
+    public function actionNew($id)
     {
-
+        if ($id)
+        {
+            $newsitem= array();
+            $newsitem=News::getNewListByID($id);
+            echo '<pre>';
+            print_r($newsitem);
+            echo '</pre>';
+        }
     }
 }
