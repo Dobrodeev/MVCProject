@@ -55,7 +55,8 @@ class Router
         $this->routes = include($routesPath);
     }
 
-    private function getURI(){
+    private function getURI()
+    {
         if(!empty($_SERVER['REQUEST_URI'])){
             return trim($_SERVER['REQUEST_URI'],'/');
 
@@ -63,19 +64,24 @@ class Router
     }
 
 
-    public function run(){
+    public function run()
+    {
 
         $uri=$this->getURI();
 //        echo $uri.'<br>';// адресная строка
-
-        foreach ($this->routes  as $uriPattern=>$path){
-            if(preg_match("~$uriPattern~",$uri)){
+        echo '<pre>';
+        print_r($this->routes);
+        echo '</pre>';
+        foreach ($this->routes  as $uriPattern=>$path)
+        {
+            if(preg_match("~$uriPattern~",$uri))
+            {
                 $internalRoute=preg_replace("~$uriPattern~",$path,$uri);
                 $segment=explode('/',$internalRoute);
-//                echo 'Выводим $segment: <br>';
-//                echo '<pre>';
-//                print_r($segment);
-//                echo '</pre>';
+                echo 'Выводим $segment: <br>';
+                echo '<pre>';
+                print_r($segment);
+                echo '</pre>';
                 $controllername=array_shift($segment).'Controller';
                 echo '$controllername: '.$controllername.'<br>';
                 $controllername=ucfirst($controllername);
