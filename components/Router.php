@@ -66,35 +66,43 @@ class Router
     public function run(){
 
         $uri=$this->getURI();
-        echo $uri;// адресная строка
+//        echo $uri.'<br>';// адресная строка
 
         foreach ($this->routes  as $uriPattern=>$path){
             if(preg_match("~$uriPattern~",$uri)){
                 $internalRoute=preg_replace("~$uriPattern~",$path,$uri);
                 $segment=explode('/',$internalRoute);
+//                echo 'Выводим $segment: <br>';
 //                echo '<pre>';
 //                print_r($segment);
 //                echo '</pre>';
                 $controllername=array_shift($segment).'Controller';
-//                echo $controllername.'<br>';
+                echo '$controllername: '.$controllername.'<br>';
                 $controllername=ucfirst($controllername);
                 $actionname='action'.ucfirst(array_shift($segment));
-//                echo $actionname;
+                echo '$actionname: '.$actionname.'<br>';
                 $parametr = $segment;
+//                echo 'Выводим $parametr: '.$parametr.'<br>';
+//                echo '<pre>';
+//                print_r($parametr);
+//                echo '</pre>';
                 $controllerfile = ROOT.'/controllers/'.$controllername.'.php'; // адрес на $NewsController
                 if (file_exists($controllerfile)) // существует ли файл
                 {
+                    echo 'Exist file: '.$controllername.'<br>';
                     include_once ($controllerfile);
                 }
                 $controllerobject = new $controllername;
+                // вызываем обратную функции, в $parametr № новости
+//                echo '<pre>';
+//                print_r($controllerobject);
+//                echo '</pre>';
                 $result = call_user_func_array(array($controllerobject, $actionname), $parametr);
                 if ($result != null)
                 {
                     break;
                 }
             }
-
-
         }
     }
 }
