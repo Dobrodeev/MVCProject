@@ -10,10 +10,7 @@ return array(
     ''=>'news/index'
 );*/
 return array(
-
-    'news/([0-9]+)' => 'news/view/$1',
-    '' => 'news/index',
-
-
-
+    'cart'=>'cart/view',// обращаемся к классу cartController & к методу view
+    'news/([0-9]+)' => 'news/view/$1',// обращаемся к классу newsController и к методу actionView к конкретному номеру новости
+    '' => 'news/index',// обращаемся к классу newsController и к методу actionIndex для вывода всех новостей
 );
