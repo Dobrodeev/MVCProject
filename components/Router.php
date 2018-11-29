@@ -46,7 +46,6 @@ class Router
 **/
 class Router
 {
-
     private $routes;
 
     public function __construct()
@@ -62,8 +61,7 @@ class Router
 
         }
     }
-
-
+    
     public function run()
     {
 
@@ -76,17 +74,17 @@ class Router
         {
             if(preg_match("~$uriPattern~",$uri))
             {
-                $internalRoute=preg_replace("~$uriPattern~",$path,$uri);
-                $segment=explode('/',$internalRoute);
-                echo 'Выводим $segment: <br>';
-                echo '<pre>';
-                print_r($segment);
-                echo '</pre>';
-                $controllername=array_shift($segment).'Controller';
-                echo '$controllername: '.$controllername.'<br>';
+                $internalRoute=preg_replace("~$uriPattern~",$path,$uri);// news/view/$1
+                $segment=explode('/',$internalRoute);// news view $1
+//                echo 'Выводим $segment: <br>';
+//                echo '<pre>';
+//                print_r($segment);
+//                echo '</pre>';
+                $controllername=array_shift($segment).'Controller';// newsController
+//                echo '$controllername: '.$controllername.'<br>';
                 $controllername=ucfirst($controllername);
                 $actionname='action'.ucfirst(array_shift($segment));
-                echo '$actionname: '.$actionname.'<br>';
+//                echo '$actionname: '.$actionname.'<br>';
                 $parametr = $segment;
 //                echo 'Выводим $parametr: '.$parametr.'<br>';
 //                echo '<pre>';
