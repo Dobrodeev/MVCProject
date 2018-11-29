@@ -33,7 +33,7 @@ class News
         $db=DB::getConnect();
         $result = $db->query('SELECT * FROM news WHERE id='.$id);
         $result->setFetchMode((PDO::FETCH_ASSOC));
-        $newsitem=$result->fetch();
-        return $newsitem;
+        $newitem=$result->fetch();
+        return $newitem;
     }
 }
