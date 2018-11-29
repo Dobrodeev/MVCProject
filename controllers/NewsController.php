@@ -15,19 +15,20 @@ class NewsController
 //        echo 707;
 
         require_once (ROOT.'/views/news/index.php');
-
         return true;
     }
 
-    public function actionNew($id)
+    public function actionView($id)
     {
         if ($id)
         {
-            $newsitem= array();
-            $newsitem=News::getNewListByID($id);
-            echo '<pre>';
-            print_r($newsitem);
-            echo '</pre>';
+            $newitem= array();
+            $newitem=News::getNewListByID($id);
+//            echo '<pre>';
+//            print_r($newsitem);
+//            echo '</pre>';
+            require_once (ROOT.'/views/news/onenew.php');
         }
+        return true;// без return цикл будет повторятся
     }
 }
