@@ -42,9 +42,9 @@ class Router
 //                print_r($segment);
 //                echo '</pre>';
                 $controllername=array_shift($segment).'Controller';// newsController
-                $controllername=ucfirst($controllername);
-                $actionname='action'.ucfirst(array_shift($segment));// первую букву делаем большой: actionIndex
-                // подключать готовые action
+                $controllername=ucfirst($controllername);// NewsController
+                $actionname='action'.ucfirst(array_shift($segment));// первую букву делаем большой: actionIndex()
+                // подключать готовые actionIndex() или actionView()
                 $parametr = $segment;
                 $controllerfile = ROOT.'/controllers/'.$controllername.'.php'; // адрес на NewsController.php
                 if (file_exists($controllerfile)) // существует ли файл NewsControlle
