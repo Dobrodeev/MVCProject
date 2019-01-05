@@ -25,7 +25,6 @@ class Router
 
     public function run()
     {
-
         $uri=$this->getURI();
 //        echo $uri.'<br>';// адресная строка
 //        echo '<pre>';
@@ -43,27 +42,17 @@ class Router
 //                print_r($segment);
 //                echo '</pre>';
                 $controllername=array_shift($segment).'Controller';// newsController
-//                echo '$controllername: '.$controllername.'<br>';
                 $controllername=ucfirst($controllername);
-                $actionname='action'.ucfirst(array_shift($segment));// первую букву делаем большой
+                $actionname='action'.ucfirst(array_shift($segment));// первую букву делаем большой: actionIndex
                 // подключать готовые action
-//                echo '$actionname: '.$actionname.'<br>';
                 $parametr = $segment;
-//                echo 'Выводим $parametr: '.$parametr.'<br>';
-//                echo '<pre>';
-//                print_r($parametr);
-//                echo '</pre>';
-                $controllerfile = ROOT.'/controllers/'.$controllername.'.php'; // адрес на $NewsController
-                if (file_exists($controllerfile)) // существует ли файл
+                $controllerfile = ROOT.'/controllers/'.$controllername.'.php'; // адрес на NewsController.php
+                if (file_exists($controllerfile)) // существует ли файл NewsControlle
                 {
-//                    echo 'Exist file: '.$controllername.'<br>';
                     include_once ($controllerfile);
                 }
                 $controllerobject = new $controllername;
-                // вызываем обратную функции, в $parametr № новости
-//                echo '<pre>';
-//                print_r($controllerobject);
-//                echo '</pre>';
+                // вызываем обратную функцию, в $parametr № новости
                 $result = call_user_func_array(array($controllerobject, $actionname), $parametr);
                 if ($result != null)
                 {
