@@ -37,10 +37,11 @@ class Router
                 $internalRoute=preg_replace("~$uriPattern~",$path,$uri);// news/view/$1
                 // подключаем роуты
                 $segment=explode('/',$internalRoute);// news view $1
-//                echo 'Выводим $segment: <br>';
 //                echo '<pre>';
 //                print_r($segment);
 //                echo '</pre>';
+//                [0] => news
+//                [1] => index
                 $controllername=array_shift($segment).'Controller';// newsController
                 $controllername=ucfirst($controllername);// NewsController
                 $actionname='action'.ucfirst(array_shift($segment));// первую букву делаем большой: actionIndex()
