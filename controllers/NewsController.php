@@ -12,7 +12,6 @@ class NewsController
     {
         $newslist = array();
         $newslist = News::getNewsList();
-//        echo 707;
 
         require_once (ROOT.'/views/news/index.php');
         return true;
@@ -24,9 +23,6 @@ class NewsController
         {
             $newitem= array();
             $newitem=News::getNewListByID($id);
-//            echo '<pre>';
-//            print_r($newsitem);
-//            echo '</pre>';
             require_once (ROOT.'/views/news/onenew.php');
         }
         return true;// без return цикл будет повторятся

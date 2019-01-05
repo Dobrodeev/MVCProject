@@ -24,9 +24,6 @@ class News
             $i++;
         }
         return $newslist;
-//        echo '<pre>';
-//        print_r($newlist);
-//        echo '</pre>';
     }
     public static function getNewListByID($id)
     {
