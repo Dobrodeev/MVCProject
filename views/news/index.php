@@ -55,7 +55,7 @@ foreach ($newslist as $value)
                 <a href="/news/<?php echo $newitem['id'];?>" class="permalink">Full article</a>
             </p>
             <div class="entry">
-                <p> <img src="/template/<?php echo $newitem['preview'];?>" width="800 " height="300"></p>
+                <p> <img src="/template/images/<?php echo $newitem['preview'];?>" width="800 " height="300"></p>
                 <p><?php echo $newitem['short_content'];?></p>
             </div>
         </div>
