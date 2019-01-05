@@ -67,9 +67,9 @@ class Router
 
         $uri=$this->getURI();
 //        echo $uri.'<br>';// адресная строка
-        echo '<pre>';
-        print_r($this->routes);
-        echo '</pre>';
+//        echo '<pre>';
+//        print_r($this->routes);
+//        echo '</pre>';
         foreach ($this->routes  as $uriPattern=>$path)
         {
             if(preg_match("~$uriPattern~",$uri))
@@ -93,7 +93,7 @@ class Router
                 $controllerfile = ROOT.'/controllers/'.$controllername.'.php'; // адрес на $NewsController
                 if (file_exists($controllerfile)) // существует ли файл
                 {
-                    echo 'Exist file: '.$controllername.'<br>';
+//                    echo 'Exist file: '.$controllername.'<br>';
                     include_once ($controllerfile);
                 }
                 $controllerobject = new $controllername;
