@@ -104,7 +104,7 @@
     <!-- end #page -->
 </div>
 <div id="footer">
-    <p>Copyright (c) 2013 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org">FCT</a>. Photos by Fotogrph</a>.</p>
+    <p>Copyright (c) 2019 clear-design. All rights reserved.</p>
 </div>
 <!-- end #footer -->
 </body>
