@@ -14,7 +14,7 @@ foreach ($newslist as $value)
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Effloresce  by FCT</title>
+<title>Прикладная математика</title>
 <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href="/template/css/style.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
@@ -37,8 +37,7 @@ foreach ($newslist as $value)
  <div id="header-wrapper">
   <div id="header">
    <div id="logo">
-    <h1><a href="#">Effloresce </a></h1>
-    <p>template Шаблоны для сайта <a href="http://www.ftemplate.ru/">СКАЧАТЬ</a></p>
+    <h1><a href="#">Краткие новости по прикладной математике</a></h1>
    </div>
   </div>
  </div>
