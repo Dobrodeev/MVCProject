@@ -50,7 +50,7 @@
                             </div>
 
                     </div>
-                    <p><a href='/' class="permalink"> Back to HomePage</a></p>
+                    <p><a href='/' class="permalink">Back to HomePage</a></p>
                     <div style="clear: both;">&nbsp;</div>
                 </div>
                 <!-- end #content -->
