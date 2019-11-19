@@ -6,8 +6,8 @@
  * Time: 16:59
  */
 return array(
-  'host' => 'localhost',
-  'dbname' => 'php_base',
+    'host' => 'localhost',
+    'dbname' => 'php_base',
     'user' => 'root',
     'password' => '',
 );
